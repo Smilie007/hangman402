@@ -1,10 +1,15 @@
 # Hangman
 
 Chapters
+
 Milestone 1: Setup the environment
+
 Milestone 2 : Create the variables of the game
+
 Milestone 3:Check if the character of the word is a word
+
 Milestone 4: Create the Game class
+
 Milestone 4: Putting it all together
 
 Description
