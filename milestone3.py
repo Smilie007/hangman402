@@ -2,6 +2,7 @@ import random
 class Milestone3:
     word_list = ['apples', 'oranges', 'bananas', 'kiwis', 'pears']
     word = random.choice(word_list)
+    
     print(word)
 
 def check_guess(guess, word):
