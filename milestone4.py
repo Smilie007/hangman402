@@ -10,26 +10,29 @@ class Hangman:
         self.word_guessed = ['_' ] * len(self.word)
         self.num_letters = len(set(self.word))
         self.list_of_guesses = []
+        print(self.word)
 
     def check_guess(self, guess):
         guess =  guess.lower()
         if guess in self.word:
             print(f"Good guess! {guess} is in the word.")
-        for i, letter in enumerate(self.word):  # Loop through each letter in the word
-            if letter == guess:  # Check if the letter matches the guess
-                self.word_guessed[i] = guess  # Replace the corresponding "_" in word_guessed with the guess
-                self.num_letters -= 1  # Reduce the variable num_letters by 1
-            else:  # Step 1: Create an else statement
-                self.num_lives -= 1  # Step 2.1: Reduce num_lives by 1
-                print(f"Sorry, {guess} is not in the word.")  # Step 2.2: Print a message for incorrect guess
-                print(f"You have {self.num_lives} lives left.")
-            
+            for i, letter in enumerate(self.word):  # Loop through each letter in the word
+                if letter == guess:  # Check if the letter matches the guess
+                    self.word_guessed[i] = guess  # Replace the corresponding "_" in word_guessed with the guess
+                    self.num_letters -= 1  # Reduce the variable num_letters by 1
+                
+        else:  # Step 1: Create an else statement
+            self.num_lives -= 1  # Step 2.1: Reduce num_lives by 1
+            print(f"Sorry, {guess} is not in the word.")  # Step 2.2: Print a message for incorrect guess
+            print(f"You have {self.num_lives} lives left.")
+                
 
     def ask_for_input(self):
         while(True):
             guess = input("guess a letter: ")
             if len(guess)!=1 or not guess.isalpha():
                 print("Invalid letter. Please, enter a single alphabetical character.")
+                
             elif guess in self.list_of_guesses:
                 print("You already tried that letter!")     
             else:
