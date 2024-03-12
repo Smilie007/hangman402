@@ -9,7 +9,7 @@ class Hangman:
         self.word_guessed = ['_' ] * len(self.word)
         self.num_letters = len(set(self.word))
         self.list_of_guesses = []
-        print(self.word)
+        #print(self.word)
 
     def check_guess(self, guess):
         guess = guess.lower()
